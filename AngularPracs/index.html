@@ -1,0 +1,39 @@
+<html>
+<head>
+   <title> Angular App </title>
+
+   <script src="angular-1.5.8/angular.js" > </script>
+   <script src="angular-1.5.8/angular.min.js" > </script>
+   <script src="basicController.js" > </script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myAppController">
+
+  Name : <input type="text" ng-model="name" > <br/>
+  <button name="click me" ng-click="reset()" > RESET </button>
+  <br/> <hr/> <br/>
+  Search : <input type="text" ng-model="fName" > <br/>
+  <ul>
+    <li ng-repeat="i in arr"> {{i}}</li>
+  </ul>
+<button ng-click="order = 'name ' " > Order by First Name </button><br/>
+<button ng-click="order = 'fName ' " > Order by LAst Name </button><br/>
+
+  <ul>
+    <li ng-repeat="j in user | orderBy : order | filter : fName "> {{j.name + "   "+j.lname+"       "+j.age}}
+    <button ng-click="remove(j)"> REMOVE </button>
+    </li>
+  </ul>
+<hr/>
+  <form ng-submit="addUser()">
+    First Name : <input type="text" ng-model="user.name" > <br/>
+    Last Name : <input type="text" ng-model="user.lname" > <br/>
+    Age : <input type="text" ng-model="user.age" > <br/>
+   <input type="submit" value="Add New User">
+  </form>
+
+
+  <p> {{name}} </p>
+</body>
+</html>

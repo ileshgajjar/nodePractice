@@ -1,0 +1,9 @@
+<h1 ng-repeat="u in mynewArray"> {{$index}}
+ Name:- {{u.pname}} <br/>
+ price :- {{u.price}}  <br/>
+ desc :- {{u.desc }} <br/>
+ <input type="button" ng-click="delete($index)" value="delete">
+
+ <input type="button" ng-click="edit($index)" value="Edit">
+
+ </h1>
